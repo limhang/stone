@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM组件联动</title>
+</head>
+<body>
+	<label>请输入今天北京地区的天气质量：<input type="text" id = 'messageinput'></label>
+	<button id = 'scan'>确认输入</button>
+	<div>输入的结果是:<span id = 'messageshow'>无记录</span></div>
+
+	<script type="text/javascript">
+	var input = document.getElementById('messageinput');
+	var show = document.getElementById('messageshow');
+	var button = document.getElementById('scan');
+	button.onclick = function(){
+		if (input.value) {
+			show.innerHTML = input.value;
+			show.style.color = '#000';
+		} else {
+			show.innerHTML = '您尚未输入信息';
+			show.style.color = '#f00';
+		}
+	}
+	</script>
+</body>
+	
+</html>
