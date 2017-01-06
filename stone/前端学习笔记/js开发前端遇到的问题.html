@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>js前端遇到的问题</title>
+	<style type="text/css">
+		.Q0{
+			width: 800px;
+			margin: 20px auto;
+			border: 1px green solid;
+		}
+
+		.Q0 div{
+			width: 300px;
+			margin: 15px auto 0px;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		ul{
+			margin: 0px auto 15px;
+		}
+
+		li{
+			margin: 8px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class='Q0' id='Q0'>
+	<div>questionZero</div><br>
+	<ul class="list0">
+		<li>描述：使用js操作DOM，抓取span标签后，无法对该对象进行操作</li>
+		<li>解决的过程：在火狐firebug中，查看右侧DOM树中的对象，发现指到span后，显示的是一个数组，而数组好像只有一个元素，但是【火狐无法定位到js的错误】，于是使用谷歌浏览器查看问题，在谷歌浏览器中，可明确的看到一条错误信息，undefine，最终揣测拿到的span标签是一个数组，于是加上数组定位【0】，解决</li>
+		<li>收获：对js操作不熟悉的阶段，可使用谷歌浏览器，有提醒的功能，多观察，js操作标签的属性时，很多属性不熟悉，可直接查看w3c</li>
+	</ul>
+	</div>
+
+	<script type="text/javascript">
+		var Q0 = document.getElementById('Q0');
+		Q0.onmouseover = function(){
+			this.style.border = '3px yellow solid';
+		};
+		Q0.onmouseout = function(){
+			this.style.border = '1px green solid';
+		};
+	</script>
+</body>
+</html>

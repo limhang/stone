@@ -1,0 +1,101 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>2016SummaryAnd2017Outlook</title>
+	<style type="text/css">
+		.keyWords{
+			width: 1000px;
+			margin: 15px auto;
+			border: 3px gray solid;
+		}
+
+		.Outlook{
+			width: 1000px;
+			margin: 0px auto;
+			padding: 0px;
+		}
+
+		.summary{
+			width: 1000px;
+			margin: 0px auto;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class='Summary'>
+		<h2>2016Summary</h2>
+		<div class='keyWords' id='key0'>
+			<div class='work'>
+				<ul>
+					<li>change two industry change three jobs</li>
+					<li>Through medium-sized company small-size company large-size company</li>
+					<li>go to library(xingdong university-city)many many times</li>
+					<li>make contact with clever people common people stupy-cute people</li>
+					<li>lose contact with my last very good friend-zhenrong i dont know why</li>
+					<li>confident lost difficult happy despair inspair around with me all the year</li>
+					<li>understand many principle</li>
+					<li>thanks all the person in my life in this fuckAndLuck 2016</li>	
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class='Outlook'>
+		<h2>2017Outlook</h2>
+		<div class='keyWords' id='key1'>
+			<div class='study'>
+				<ul>STUDY
+					<li>front-end</li>
+					<li>backend dataAnalysis</li>
+					<li>zhiHuKnowledgeShare Direction-How TO Efficient Learning</li>
+					<li>Person Project Direction-TimeKiller Direction-DataAnalysis about Lagou based Python Direction-DataAnalysis about zhiHu found hot questiones based Python</li>
+				</ul>
+			</div>
+
+			<div class='life'>
+				<ul>LIFE
+					<li>Exercise Direction-Running</li>
+					<li>Apperance Direction-clothes</li>
+					<li>WeChat Direction-circle of friends</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var showWindow0 = document.getElementById('key0');
+		var showWindow1 = document.getElementById('key1');
+		var list = document.getElementsByTagName('li');
+
+		for (i = 0 ; i < list.length; i++) {
+			list[i].style.fontSize = '22px';
+
+			list[i].onmouseover = function(){
+				this.style.fontWeight = 'bold';
+			}
+
+			list[i].onmouseout = function(){
+				this.style.fontWeight = 'normal';
+			}
+		}
+
+		showWindow0.onmouseover = function(){
+			this.style.border='3px solid #0090ff';
+		};
+
+		showWindow0.onmouseout = function(){
+			this.style.border='3px solid gray';
+		}
+
+		showWindow1.onmouseover = function(){
+			this.style.border = '3px solid #0090ff';
+		}
+
+		showWindow1.onmouseout = function(){
+			this.style.border = '3px gray solid';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>iOS代码规范</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="iOS">
+		<div class='viewController代码结构'>viewController代码结构</div>
+		<ul>
+			<li>属性：@property(nonatomic,strong)UIButton *confirmButton</li>
+			<li>VC生命周期：#pragma mark - life cycle</li>
+			<li>系统控件代理：#pragma mark - UITableViewDelegate</li>
+			<li>自定义代理：#pragma mark - CustomDelegate</li>
+			<li>事件响应：#pragma mark - event response</li>
+			<li>私有方法(一般都是时间控件外观小处理，也可以放在分类中)：#pragma mark - private methods</li>
+			<li>setter和getter方法：#pragma mark - setters and getters</li>
+			注：控件添加到view上面都是在viewDidLoad中，使用[self.view addSubview:self.firstLabel];调用getter方法
+		</ul>
+		参考：<a href="http://casatwy.com/iosying-yong-jia-gou-tan-viewceng-de-zu-zhi-he-diao-yong-fang-an.html">架构和框架参考</a>
+	</div>
+</body>
+</html>

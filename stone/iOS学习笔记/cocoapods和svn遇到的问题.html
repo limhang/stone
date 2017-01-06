@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>cocoapods和svn使用遇到的问题</title>
+	<style type="text/css">
+		.top .title_one{
+			margin: 0px auto;
+			width: 300px;
+			text-align: center;
+			font-size: 25px;
+		}
+
+		.top .title_two{
+			margin: 0px auto;
+			width: 300px;
+			text-align: center;
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="title_one">cocoapods常见问题总结</div>
+		<ul>
+			<li>报错：RPC failed result=18,HTTP code =200 fatal:early EOF fatal:index-pack failed</li>
+			解决办法：git config http.postBuffer 524288000<br>	
+			<a>参考：</a><br><a href="http://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly" target="_blank">stackflow参考</a><br>
+			<a href="http://www.jianshu.com/p/4291014e01d1/comments/2787637" target="_blank">简书参考</a>
+			<li>网速慢的时候，怎样安装cocoapods</li>
+			1.进入cocoapods的仓库中，fork该项目。<a href="https://github.com/CocoaPods/Specs" target="_blank">链接</a><br>
+			2.使用GitHub Desktop下载自己fork的项目，将下载的文件重改名master，然后拖到~/.cocoapods/repos目录下<br>
+			参考：<br>
+			<a href="http://www.jianshu.com/p/77f8200665d6" target="_blank">简书参考</a>
+		</ul>
+
+		<div class="title_two">svn使用中遇到的问题</div>
+		<ul>
+			<li>报错：svn: E155036: Please see the 'svn upgrade' command svn: E155036: The working copy at '/Users/het/.cocoapods/repos/HETSpecs'is too old (format 29) to work with client version '1.9.4 (r1740329)' (expects format 31). You need to upgrade the working copy first.
+			</li>
+			1.HETSpect是本地的仓库，进入/Users/het/.cocoapods/repos/HETSpecs，然后执行svn upgrade,--亲测有效<br>
+			参考:<br>
+			<a href="http://easwy.com/blog/archives/svn-upgrade-and-switch/" target="_blank">本地url改变，更换库</a>
+		</ul>
+	</div>
+</body>
+</html>

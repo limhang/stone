@@ -1,0 +1,203 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>航的小站</title>
+	<style type="text/css">
+		.content{
+			position: relative;
+		}
+
+		.ios{
+			width: 800px;
+			margin: 20px auto;
+			border: 3px #cccccc solid;
+			background-color: #f7f7f7;
+		}
+
+		.img0{
+			position: absolute;
+			width: 400px;
+			right: 0px;
+			top: 0px;
+		}
+
+		.img0 .lake{
+			width: 400px;
+		}
+
+		.title_ios{
+			width: 300px;
+			margin: 0px auto;
+			font-size: 25px; 
+			text-align: center;
+		}
+
+		.title_python{
+			width: 300px;
+			margin: 0px auto;
+			font-size: 25px; 
+			text-align: center;
+		}
+
+		.title_web{
+			width: 300px;
+			margin: 0px auto;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		.life{
+			margin: 0px auto;
+			font-size: 25px;
+			text-align: center;
+			width: 300px;
+		}
+
+		.hang_info{
+			width: 800px;
+			margin: 5px auto;
+			height: 85px;
+		}
+
+		.hang_info .sectionOne{
+			margin: 10px;
+		}
+
+		.hang_info .sectionOne span{
+			font-size: 25px;
+			font-weight: bold;
+		}
+
+		.hang_info .sectionTwo li{
+			float: right;
+			margin: 5px;
+			font-size: 20px;
+			color: blue;
+		}
+
+		a{
+			text-decoration: none;
+		}
+
+		.footer{
+			width: 1400px;
+			margin: 10px auto;
+		}
+
+		.wordsOne span{
+			font-size: 18px;
+			font-weight: bold;
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+
+		.wordsTwo span{
+			font-size: 18px;
+			font-weight: bold;
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+		
+		.wordsThree span{
+			font-size: 18px;
+			font-weight: bold;
+			margin-left: 20px;
+			margin-top: 20px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class='hang_info'>
+		<div class='sectionOne' id = 'title'><span>航</span>的小站<img src="" alt=""></div>
+		<div class='sectionTwo' id = 'list'>
+			<ul>
+				<li><a href="">关于我</a></li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">项目</a></li>
+				<li><a href="">文集</a></li>
+				<li><a href="">博客</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class='content'>
+		<div class="iOS">
+			<div class='title_ios'>iOS相关</div>
+			<ul>
+				<li><a href="./static_html/iOS/delelopConfig.html" target='_blank'>开发环境配置相关</a></li>
+				<li><a href="./static_html/iOS/codeSpecification.html" target='_blank'>iOS代码规范相关</a></li>
+				<li><a href="#" target='_blank'>视图处理相关</a></li>	
+			</ul>
+
+			<div class='title_python'>python相关</div>
+			<ul>
+				<li><a href="#" target='_blank'>python基础</a></li>
+				<li><a href="#" target='_blank'>python爬虫</a></li>
+				<li><a href="#" target='_blank'>python后端开发</a></li>
+			</ul>
+			
+			<div class='title_web'>前端开发</div>
+			<ul>
+				<li>html+css+js杂七杂八</li>
+				<li>demo</li>
+			</ul>
+
+			<div class='life'>生活</div>
+			<ul>
+				<li><a href="https://www.zhihu.com/question/23238816">日常办公坐姿</a></li>
+			</ul>
+		</div>
+
+		<div class='img0'>
+			<img src="img/lake.jpg" class='lake'>
+		</div>
+	</div>
+
+
+
+
+
+	<div class='footer'>
+		<div class='wordsOne'>
+			<span>You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something  your gut, destiny, life, karma, whatever</span>
+		</div>
+
+		<div class='wordsTwo'>
+			<span>
+				Remembering that you are going to die is the best way I know to avoid the trap of thinking you have something to lose. You are already naked. There is no reason not to follow your heart. 
+			</span>
+		</div>
+
+		<div class='wordsThree'>
+			<span>
+				Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you havent found it yet, keep looking. Dont settle. As with all matters of the heart, youll know when you find it. 
+			</span>
+		</div>
+	</div>
+
+	<script>
+		var Alist = document.getElementById('list');
+		var listboom = Alist.getElementsByTagName('li');
+		var title = document.getElementById('title');
+		var titleHang = title.getElementsByTagName('span')[0];
+		titleHang.onmouseover = function(){
+			this.style.color = '#0090FF';
+		};
+		titleHang.onmouseout = function(){
+			this.style.color = 'black';
+		};
+		for (i = 0 ; i< listboom.length; i++) {
+			var showlist = listboom[i];
+			showlist.onmouseover = function(){
+				this.style.borderBottom = '3px solid #0090FF';
+			};
+			showlist.onmouseout = function(){
+				this.style.borderBottom = '0px solid #f7f7f7';
+			};
+		} 
+	</script>
+</body>
+</html>
