@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二叉树学习</title>
+</head>
+<body>
+	tips:writing is the best reading - jacob
+	
+	背景知识：
+	树是一种比较重要的数据结构，尤其是二叉树。二叉树是一种特殊的树，在二叉树中每个节点最多有两个子节点，一般称为左子节点和右子节点（或左孩子和右孩子），并且二叉树的子树有左右之分，其次序不能任意颠倒。二叉树是递归定义的，因此，与二叉树有关的题目基本都可以用递归思想解决。
+
+
+	基本概念：
+	二叉树概念：每个结点最多有两棵子树，所以二叉树中不存在度大于2的结点。二叉树中每一个节点都是一个对象，每一个数据节点都有三个指针，分别是指向父母、左孩子和右孩子的指针。每一个节点都是通过指针相互连接的。相连指针的关系都是父子关系。
+	
+	满二叉树：在一棵二叉树中，如果所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上，这样的二叉树称为满二叉树。
+
+	完全二叉树：完全二叉树是指最后一层左边是满的，右边可能满也可能不满，然后其余层都是满的。一个深度为k，节点个数为 2^k - 1 的二叉树为满二叉树（完全二叉树）。满二叉树一定是完全二叉树，但完全二叉树不一定是满二叉树。
+
+	初级应用：
+	二叉树的遍历：前序遍历，中序遍历，后序遍历
+	（1）前序遍历（DLR），首先访问根结点，然后遍历左子树，最后遍历右子树。简记根-左-右。
+  	（2）中序遍历（LDR），首先遍历左子树，然后访问根结点，最后遍历右子树。简记左-根-右。
+	（3）后序遍历（LRD），首先遍历左子树，然后遍历右子树，最后访问根结点。简记左-右-根。 
+	【规律：左右不变，根移位】
+	 实现的代码主要使用递归：
+	 void PreOrderTraverse(BinaryTreeNode * pRoot)  
+	{  
+		if(pRoot == NULL)  
+			return;  
+		Visit(pRoot); // 访问根节点  
+		PreOrderTraverse(pRoot->m_pLeft); // 前序遍历左子树  
+		PreOrderTraverse(pRoot->m_pRight); // 前序遍历右子树  
+	}  
+
+	void InOrderTraverse(BinaryTreeNode * pRoot)  
+	{  
+	    if(pRoot == NULL)  
+	        return;  
+	    InOrderTraverse(pRoot->m_pLeft); // 中序遍历左子树  
+	    Visit(pRoot); // 访问根节点  
+	    InOrderTraverse(pRoot->m_pRight); // 中序遍历右子树  
+	}  
+
+	void PostOrderTraverse(BinaryTreeNode * pRoot)  
+	{  
+	    if(pRoot == NULL)  
+	        return;  
+	    PostOrderTraverse(pRoot->m_pLeft); // 后序遍历左子树  
+	    PostOrderTraverse(pRoot->m_pRight); // 后序遍历右子树  
+	    Visit(pRoot); // 访问根节点  
+	}  
+
+	提升篇：
+
+	易错混淆点：
+
+	参考资料：
+	http://blog.csdn.net/luckyxiaoqiang/article/details/7518888
+	https://segmentfault.com/a/1190000000740261
+</body>
+</html>
