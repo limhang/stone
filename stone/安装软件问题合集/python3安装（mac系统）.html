@@ -61,4 +61,18 @@ export TRAVIS=1
 FROM:---http://www.jianshu.com/p/d96feb47b05b
 我的尝试：
 【chmod -R 755 /usr/local/etc/openssl/misc】
+结果：
+还是有蛮多问题的，但是基本都是按照提示来处理就好，大多出现权限不够等等，如果755还是不可以，可以尝试777
+安装homebrew和python3基本耗时2个钟头，安装记录都在这里了，这个习惯需要坚持，这个习惯很好@——@
+
+step Two:
+1.安装Virtualenv，pip3 install virtualenv
+tip：在安装的时候，应该存在pip2和pip3，python2和python3，但是修改路径不是很好，所以我采用添加版本号的方式，不加的话，mac系统会逐层查找，所有会找到系统自带的python2
+参考信息：
+https://segmentfault.com/a/1190000006118856
+
+step three:
+创建虚拟环境：virtualenv caogao ##创建一个caogao的文件夹
+激活虚拟环境：source ./bin/activate
+关闭虚拟环境：deactivate
 
