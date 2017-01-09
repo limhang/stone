@@ -1,0 +1,48 @@
+python3安装（mac系统）
+写在前面：
+现在用的mac电脑上系统自带的是2.7版本的python，想用python3.5，需要自行安装，电脑上可以同时有2.7和3.5的版本
+2个版本的兼容可以使用，虚拟环境的方式（virtualenv）python三大神器virtualenv, fabric, pip。
+
+安装操作：
+step one:
+使用homebrew安装python ->brew install python3
+问题1:
+【Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink .
+/usr/local/opt is not writable.
+You can try again using:
+  brew link gdbm】
+ 参考信息：
+ 【Following Alex' answer I was able to resolve this issue; seems this to be an issue non specific to the packages being installed but of the permissions of homebrew folders.
+sudo chown -R `whoami`:admin /usr/local/bin】
+FROM:---http://stackoverflow.com/questions/26647412/homebrew-could-not-symlink-usr-local-bin-is-not-writable
+我的尝试：
+sudo chown -R `whoami`:admin /usr/local/bin
+
+问题2:
+【python3 You must `brew link pkg-config gdbm` before python3 can be installed】
+参考信息：
+FROM:---http://www.dongcoder.com/detail-293244.html
+我的尝试：
+输入：【brew link pkg-config gdbm】
+出现：/usr/local/share/man/man3 is not writable.
+输入：【sudo chown -R het /usr/local/share/man/man3/】
+出现：/usr/local/opt is not writable.
+输入：【sudo chown -R het /usr/local/opt/】
+出现：Error: Could not symlink .
+输入：brew link gdbm
+出现：Linking /usr/local/Cellar/gdbm/1.12... 12 symlinks created
+输入：brew install python3
+等待安装。。。
+心得：【查找Google，按照英文提示尝试】
+
+问题3:
+【Error: Your Xcode (8.0) is outdated.
+Please update to Xcode 8.2 (or delete it).
+Xcode can be updated from the App Store.】
+我的尝试：
+。。。不想用homebrew了
+
+
+
