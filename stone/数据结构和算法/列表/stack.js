@@ -9,15 +9,15 @@ function Stack(){
 }
 
 function push(element) {
-	this.dataStore[top++] = element;
+	this.dataStore[this.top++] = element;
 }
 
 function pop() {
-	return this.dataStore[--top];
+	return this.dataStore[--this.top];
 }
 
 function peek() {
-	return this.dataStore[top - 1];
+	return this.dataStore[this.top - 1];
 }
 
 function length() {
