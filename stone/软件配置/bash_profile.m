@@ -21,3 +21,13 @@ alias sbash="vim ~/.bash_profile"
 alias svbash="source ~/.bash_profile"
 
 
+##show tree
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+
+
+##查找指定文件名的文件,eg:find . -name "xxx"
+alias fd="find . -name "
+
+
+##删除文件夹中指定文件,eg:.DS_Store就是需要删除的文件，stone_notes为指定目录
+alias rmnoteDS="find /Users/het/Desktop/jacob/stone/stone/stone_notes -name .DS_Store |xargs rm -rf"
