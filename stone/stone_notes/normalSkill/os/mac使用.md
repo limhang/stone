@@ -20,6 +20,9 @@ alias subl=\''/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'\
 **alias为linux的个人偏好设置文件，silicongo中有用到过**
 
 
+##修改文件默认打开的方式
+右键点击需要修改的文件，点击显示简介，然后点击打开方式，最后设置完成。
+
 ##mac软件使用推荐
 * **macdown** 编写markdown的一款软件
 * **charles** 抓包工具，设置相关配置后，可抓取https请求
