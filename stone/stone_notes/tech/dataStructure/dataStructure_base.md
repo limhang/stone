@@ -44,6 +44,8 @@
 
 《数据结构与算法C语言描述》
 
+《大话数据结构》
+
 [算法与数据结构资源推荐](https://zhuanlan.zhihu.com/p/23191006)
 
 [可视化的算法和数据结构网站](https://visualgo.net/)
