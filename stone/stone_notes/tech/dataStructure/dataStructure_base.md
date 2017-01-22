@@ -9,7 +9,7 @@
 > [参考](#info)
 
 
-##数据结构
+##<a name="dataStructure"></a>数据结构
 
 ###基础知识
 物理存储结构：线性存储，链式存储
@@ -23,7 +23,7 @@
 
 ###二叉树，查找二叉树（BST）,二叉堆，图
 
-##算法(应用)
+##<a name="algorithm"></a>算法(应用)
 
 ###排序算法
 
@@ -39,7 +39,7 @@
 ####二分查找
 
 
-##参考
+##<a name="info"></a>参考
 《数据结构与算法Javascript描述》
 
 《数据结构与算法C语言描述》
@@ -48,6 +48,6 @@
 
 [可视化的算法和数据结构网站](https://visualgo.net/)
 
-[]()
+[javascript数据结构实现——我的github](https://github.com/sanyueyuxincao/stone/tree/master/stone/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E5%88%97%E8%A1%A8)
 
-[]()
+[浙大数据结构与算法-视频](http://www.icourse163.org/course/ZJU-93001#/info)
