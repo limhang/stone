@@ -253,4 +253,6 @@ React 为每个状态都提供了两种处理函数，will 函数在进入状态
 
 [reflux与flux等的比较使用](http://www.cnblogs.com/lovesueee/p/4893218.html)
 
+[官方文档](https://github.com/reflux/refluxjs/tree/master)
+
 
