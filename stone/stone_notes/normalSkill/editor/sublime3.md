@@ -25,18 +25,31 @@ sublime安装插件的包管理工具
 
 * emmet
 
+前端编写神器
+
 * sublimeCodeIntel
+
+代码自动补全插件，[配置](http://blog.csdn.net/hehexiaoxia/article/details/54134756)
 
 * sublimelinter
 
-* pyv8
+代码检错插件，[配置1](http://www.cnblogs.com/lhb25/archive/2013/05/01/sublimelinter-for-js-css-coding.html)  [配置2](https://segmentfault.com/a/1190000000389188)
 
 * babel
 
 支持es6与jsx语法高亮
 
 ##<a name="custom"></a>偏好设置
-setting user的配置如下：
+
+###建立软链：
+
+```
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+```
+如果之前有过软链，终端会提示exit，直接删除即可，rm XXX
+
+
+###setting user的配置如下：
 
 ```
 {
@@ -49,7 +62,7 @@ setting user的配置如下：
 
 ```
 
-key bindings user的配置如下：
+###key bindings user的配置如下：
 
 ```
 [
