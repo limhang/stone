@@ -16,8 +16,20 @@
 > > >
 > > >[2-3.伪类和伪元素](#section2_3)
 >
->
+> >[3.定位元素](#section3)
+> > >[3-1.盒子模型](#section3-1)
+> > >
+> > >[3-2.浮动与清除](#section3-2)
+> > >
+> > >[3-3.定位](#section3-3)
+> > >
+> 
 > [参考](#info)
+> >[1、网络资源](#networking)
+> >
+> >[2、书籍-css设计指南3](#book)
+> >
+> >[3、百度前端学院](#train)
 
 ##<a name="base"></a>css设计指南3
 ###<a name="section0"></a>1.Html标记与文档结构
@@ -231,9 +243,86 @@ ID 和类为我们选择元素提供了另一套手段，利用它们可以不�
 	
 	Age: 25 years.
 	
+
+###<a name="section3"></a>3、定位元素
+####<a name="section3-1"></a>3-1、盒子模型
+#####3-1-1、盒子模型属性
+1、边框(border)。可以设置边框的宽窄、样式和颜色。	宽度(border-width)。可以使用 thin、medium 和 thick 等文本值，也可以使用 除百分比和负值之外的任何绝对值。	样式(border-style)。有 none、hidden、dotted、dashed、solid、double、groove、 ridge、inset 和 outset 等文本值。	颜色(border-color)。可以使用任意颜色值，包括 RGB、HSL、十六进制颜色 值和颜色关键字。2、内边距(padding)。可以设置盒子内容区与边框的间距。 
+
+3、外边距(margin)。可以设置盒子与相邻元素的间距。
 	
+	垂直方向上的外边距会叠加，这可是你必须得知道的一件事。
+	
+	p {height:50px; border:1px solid #000; backgroundcolor:#fff; margin-top:50px;margin-bottom:30px;}
+	
+由于第一段的下外边距与第二段的上外边距相邻，你自然会认为它们之间的外边距 是 80 像素(50+30)，但是你错啦!它们实际的间距是 50 像素。像这样上下外边距 相遇时，它们就会相互重叠，直至一个外边距碰到另一个元素的边框。就上面的例 子而言，第二段较宽的上外边距会碰到第一段的边框。也就是说，较宽的外边距决 定两个元素最终离多远，没错——50 像素。这个过程就叫外边距叠加。
+
+#####3-1-2、盒子有多大
+
+首先，谈一谈设定盒子的宽度，因为控制元 素的宽度是创建多栏布局的头等大事。一开始我们会看到给没有宽度的元素添加边 框、内边距和外边距的效果，然后再看看通过 CSS 给它设置了宽度之后，它的行为有什么不同。
+
+* 没有宽度的盒子
+
+	盒模型结论一:没有(就是没有设置 width 的)宽度的元素始终会扩展到填满其父 元素的宽度为止。添加水平边框、内边距和外边距，会导致内容宽度减少，减少量 等于水平边框、内边距和外边距的和。
+	
+* 有宽度的盒子
+
+	盒模型结论二:为设定了宽度的盒子添加边框、内边距和外边距，会导致盒子扩展 得更宽。实际上，盒子的 width 属性设定的只是盒子内容区的宽度，而非盒子要占 据的水平宽度。
+
+####<a name="section3-2"></a>3-2、浮动与清除
+#####3-2-1、浮动
+CSS 设计 float 属性的主要目的，是为了实现文本绕排图片的效果。然而，这个属 性居然也成了创建多栏布局最简单的方式。
+
+说得形象一点，在你浮动一张图片或者其他元素时，你是在要求浏览器把它往上方 推，直到它碰到父元素(也就是 body 元素)的内边界。后面的段落(带灰色边框) 不再认为浮动元素在文档流中位于它的前面了，因而它会占据父元素左上角的位置。 不过，它的内容(文本)会绕开浮动的图片。
+
+接下来我们再看看浮动的另一面，这也是必须得理解的。浮动元素位于“文档流外 部”，因而它已经不被包含在标记中的父元素之内了。正因为如此，它对布局可能产 生破坏性影响。
+
+**围住浮动元素的三种方法**
+
+1、为父元素添加 overflow:hidden
+
+	 <section>         <img src="images/rubber_duck2.jpg">         <p>It's fun to float.</p>    </section>    <footer> Here is the footer element that runs across the bottom of the       page.
+    </footer>
+	
+	section {border:1px solid blue; margin:0 0 10px 0; overflow:hidden;}    img {float:left;}    p {border:1px solid red;}
+
+2、同时浮动父元素
+
+	section {border:1px solid blue; float:left; width:100%;} 
+	img {float:left;}	footer {border:1px solid red; clear:left;}
+	
+3、添加非浮动的清除元素
+
+	方案一：
+	<section> 4 <img src="images/rubber_duck.jpg">		<p>It's fun to float.</p>		<div class="clear_me"></div>	
+	</section>
+	<footer> Here is the footer element...</footer>
+	
+	section {border:1px solid blue;}	img {float:left;}	.clear_me {clear:left;}	footer {border:1px solid red;}
+
+	方案二：
+	<section class="clearfix">      <img src="images/rubber_duck.jpg">      <p>It's fun to float.</p>	</section>	<footer> Here is the footer element...</footer>
+	
+	.clearfix:after {           content:".";           display:block;           height:0;           visibility:hidden;           clear:both;	}
+	
+####<a name="section3-3"></a>3-3、定位
+#####3-3-1、相对定位
+相对自己本身，发生移动，不影响其他的元素布局，原来自身所在的空间保留不动，也可能超过body的边界
+
+#####3-3-2、绝对定位
+与相对定位相反，绝对定位是将元素连根拔起，然后在相对定位上下文（默认是body,当将其某个祖先元素设置为position:relative之后，该元素就是定位上下文了），来进行位置确定。
+
+#####3-3-3、固定定位
+和绝对定位类似，也是完全将元素连根拔起，但是它参考的浏览器的边界或者手机的屏幕，不会随着滚动发生偏移。
+
+#####3-3-4、显示属性（display：inline||block）
+   把块级元素变成行内元素(或者相反)的魔法如下
+ 
+ 	/*默认为 block*/	p {display:inline;} 
+	/*默认为 inline*/	a {display:block;}
+
 ##<a name="info"></a>参考
-###1.网络资源
+###<a name="networking"></a>1、网络资源
 [css布局-dispaly,position,float](http://www.cnblogs.com/dolphinX/archive/2012/10/13/2722501.html)
 
 [css布局-float详解，英文](https://css-tricks.com/all-about-floats/)
@@ -245,8 +334,8 @@ ID 和类为我们选择元素提供了另一套手段，利用它们可以不�
 [HTML、CSS知识点总结，浅显易懂](http://www.tuicool.com/articles/nYr22qn)
 
 
-###2.书籍相关
+###<a name="book"></a>2、书籍相关
 [css设计指南3](http://vdisk.weibo.com/s/7C37FWhg2OD?from=page_100505_profile&wvr=6)
 
-###3.练手项目
+###<a name="train"></a>3、练手项目
 [百度前端技术学院](http://ife.baidu.com/2016/task/all)
