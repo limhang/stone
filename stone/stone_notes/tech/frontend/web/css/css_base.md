@@ -2,6 +2,7 @@
 
 引子：前期有看过一些css相关的书籍，但是一直都没有做总结和记录，现在开始吧~~
 
+**目录：**
 > [css设计指南3](#base)
 > >[1.Html标记与文档结构](#section0)
 > > >[1-1.Html标记基础](#section0_0)
@@ -11,9 +12,9 @@
 > > [2.css工作原理](#section1)
 > > >[2-1.css基本使用](#section1_0)
 > > >
-> > >[2-2.css选择符](#section1_1)
+> > >[2-2.选中Html标签的方法](#section1_1)
 > > >
-> > >
+> > >[2-3.伪类和伪元素](#section2_3)
 >
 >
 > [参考](#info)
@@ -109,7 +110,7 @@
 	```   h1, h2, h3 {color:blue; font-weight:bold;}
 	```
 	
-####2-2.选中Html标签的方法（id,属性，上下文选择符）
+####<a name="section1_1"></a>2-2.选中Html标签的方法（id,属性，上下文选择符）
 #####2-2-1.上下文选择符
 上下文选择符（后代组合式选择符）的格式如下:
 
@@ -167,7 +168,71 @@ ID 和类为我们选择元素提供了另一套手段，利用它们可以不�
 	那么，相应的 ID 选择符就是这样的:
 	
 		#specialtext {CSS样式声明}	或者这样的:		p#specialtext {CSS样式声明}
-	##<a name="info"></a>参考
+
+####<a name="section2_3"></a>2-3.伪类和伪元素
+#####2-3-1.伪类
+伪类这个叫法源自它们与类相似，但实际上并没有类会附加到标记中的标签上。伪类分两种。
+1.UI(User Interface，用户界面)伪类会在 HTML 元素处于某个状态时(比如鼠标 指针位于链接上)，为该元素应用 CSS 样式。
+2.结构化伪类会在标记中存在某种结构上的关系时(如某个元素是一组元素中的第 一个或最后一个)，为相应元素应用 CSS 样式。
+
+* UI伪类
+
+	1、链接伪类
+	
+		Link。此时，链接就在那儿等着用户点击。 
+		Visited。用户此前点击过这个链接。		Hover。鼠标指针正悬停在链接上。	
+		Active。链接正在被点击(鼠标在元素上按下，还没有释放)。
+		
+		a:link {color:black;}		a:visited {color:gray;}		a:hover {text-decoration:none;}		a:active {color:red;}
+		
+	**warning**：一个冒号(:)表示伪类，两个冒号(::)表示 CSS3 新增的伪元素。尽管浏览器目 前都支持对 CSS 1 和 CSS 2 的伪元素使用一个冒号，但希望你能习惯于用双冒号代 替单冒号，因为这些单冒号的伪元素最终可能都会被淘汰掉。
+	
+	2、:focus 伪类
+	
+		input:focus {border:1px solid blue;}
+			会在光标位于 input 字段中时，为该字段添加一个蓝色边框。这样可以让用户明确地知道输入的字符会出现在哪里。
+
+	3、:target 伪类
+	
+		如果用户点击一个指向页面中其他元素的链接，则那个元素就是目标(target)，可以 用:target 伪类选中它。
+		
+* 结构化伪类
+
+	1、:first-child 和:last-child
+	
+	:first-child 代表一组同胞元素中的第一个元素，而:last-child 则代表最后一个。
+	
+	2、:nth-child
+	
+		e:nth-child(n)
+	
+	e 表示元素名，n 表示一个数值(也可以使用 odd 或 even)。
+	
+#####2-3-2.伪元素
+顾名思义，伪元素就是你的文档中若有实无的元素。以下我们介绍几个最有用的伪 元素
+
+1、::first-letter 伪元素
+
+	p::first-letter {font-size:300%;}
+	
+段落首字符放大的效果。
+
+2、::first-line 伪元素
+
+	p::first-line {font-variant:small-caps;} 
+
+可以把第一行以小型大写字母显示
+
+3、::before 和::after 伪元素
+
+	<p class="age">25</p>
+	p.age::before {content:"Age: ";}
+	p.age::after {content:" years.";}
+	
+	Age: 25 years.
+	
+	
+##<a name="info"></a>参考
 ###1.网络资源
 [css布局-dispaly,position,float](http://www.cnblogs.com/dolphinX/archive/2012/10/13/2722501.html)
 
