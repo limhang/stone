@@ -319,6 +319,10 @@ CSS 设计 float 属性的主要目的，是为了实现文本绕排图片的效
 	
 	.clearfix:after {           content:".";           display:block;           height:0;           visibility:hidden;           clear:both;	}
 	
+#####3-2-3、浮动与清除的例子（源码中也有解释）
+
+[浮动与清除Demo](https://github.com/sanyueyuxincao/train/blob/master/baidu_front/section0/float_study.html)	
+	
 ####<a name="section3-3"></a>3-3、定位
 #####3-3-1、相对定位
 相对定位是相对哪里定位的呢？相对的是原来它在文档流中的位置，发生移动，不影响其他的元素布局，原来自身所在的空间保留不动，也可能超过body的边界
@@ -365,7 +369,7 @@ left的值表示对象相对原位置向右偏移的距离，right的值表示�
 
 
 #####4-2-2、三栏中栏流动布局
-
+[例子]()
 
 ####<a name="section4-3"></a>4-3、多栏布局
 
