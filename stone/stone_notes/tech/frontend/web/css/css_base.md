@@ -369,7 +369,7 @@ left的值表示对象相对原位置向右偏移的距离，right的值表示�
 
 
 #####4-2-2、三栏中栏流动布局
-[例子]()
+[例子详解](https://github.com/sanyueyuxincao/train/blob/master/baidu_front/section0/task3_2.html)
 
 ####<a name="section4-3"></a>4-3、多栏布局
 
