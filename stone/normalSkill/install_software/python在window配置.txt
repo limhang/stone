@@ -29,6 +29,8 @@ http://blog.csdn.net/xie_0723/article/details/51958243
 但是这个都是很大，所以很慢，可以使用镜像来解决，
 winpty pip3 install -i url virtualenv
 
+ 可使用:https://pypi.tuna.tsinghua.edu.cn/simple
+
 参考：http://blog.csdn.net/lambert310/article/details/52412059
 
 在git bash中使用pip 的virtualenv，使用source venv/scripts/activate
