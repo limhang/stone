@@ -115,6 +115,8 @@ tip：在安装的时候，应该存在pip2和pip3，python2和python3，但是�
 ##<a name="virtual_use"></a>3、虚拟开发环境使用
 创建虚拟环境：virtualenv caogao ##创建一个caogao的文件夹
 
+也可以指定虚拟环境的版本 virtualenv caogao --python=3.6
+
 激活虚拟环境：source ./bin/activate
 
 关闭虚拟环境：deactivate
