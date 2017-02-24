@@ -8,4 +8,4 @@
 
 [python爬虫教程](http://www.lining0806.com/)
 
-[python爬虫完全版](https://piaosanlang.gitbooks.io/spiders/02day/section2.3.html)
+[python爬虫git版本](https://piaosanlang.gitbooks.io/spiders/02day/section2.3.html)
