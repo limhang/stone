@@ -1,0 +1,34 @@
+window下配置python的步骤
+1、官网下载最新版的python，http://www.python.org/download/【python3.5自带pip】
+2、修改python的环境配置，有2种方法，方法一：寻常的修改方法，我的计算机，属性...
+其实方法一还是挺简单的，直接在环境变量中的系统变量里面设置path为安装路径就可以了
+方法二，使用cmd操作，path=%path%;C:\Python ，其中 C:\Python 是Python的安装目录。注意：需要进入到C:\Python目录下操作，在cmd中进入的操作是【D:】
+3、在cmd中使用python --version，查看是否有安装好
+4、使用pip安装文件，pip install aiohttp，安装第三包
+【pip install aiohttp】包的时候容易报错
+【小坑】：在pip install的过程中，一直出现
+# Retrying (Retry(total=4, connect=None, read=None, redirect=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.python.org', port=443): Read timed out. (read timeout=15)",)': /simple/netifaces/
+# the above should download, then fail as we don't have python-dev .. but it can't download it to start with
+# times-out
+#ReadTimeoutError: HTTPSConnectionPool(host='pypi.python.org', port=443): Read timed out.
+其实就是外网被墙的原因
+【解法】：开始谷歌翻墙插件就好了。。。多用谷歌参考：https://github.com/pypa/pip/issues/1805
+【小坑】：在pip install 过程中，在python下的Scripts文件下运行，因为pip不是python的解释型下运行的
+
+
+
+
+------在git bash中使用python
+http://blog.csdn.net/xie_0723/article/details/51958243
+
+
+在git bash中使用python，需要在前面加上winpty python，才可以
+
+在git bash中用pip安装插件，也需要在script下进行(最好的办法就是在环境变量中添加D:\python\Scripts;)，但是需要加上winpty，eg:winpty pip3 install virtualenv
+
+但是这个都是很大，所以很慢，可以使用镜像来解决，
+winpty pip3 install -i url virtualenv
+
+参考：http://blog.csdn.net/lambert310/article/details/52412059
+
+在git bash中使用pip 的virtualenv，使用source venv/scripts/activate
