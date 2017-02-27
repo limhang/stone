@@ -1,3 +1,21 @@
+#python spider
+> [1、简单爬虫入门实例](#section1)
+>
+>
+>
+>
+> [参考](#info)
+
+
+##<a name="section1"></a>简单爬虫入门实例
+
+
+
+##<a name="info"></a>参考
+###参考书籍
+《用python写网络爬虫》，可在脚本之家下载，使用微信关注，然后百度云下载
+
+###网络资源
 [python学习资料](http://www.imooc.com/article/1451)
 
 [python中文开发社区](http://bbs.pythontab.com/)
