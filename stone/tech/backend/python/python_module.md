@@ -76,3 +76,14 @@ eg:
 正则匹配模块，和perl脚本的正则匹配很像可[参考](http://www.runoob.com/python/python-reg-expressions.html)
 
 正则匹配的[demo](http://www.codeceo.com/article/python-regular-expressions-re-module.html)
+
+[What is the difference between .*? and .* regular expressions](http://stackoverflow.com/questions/3075130/what-is-the-difference-between-and-regular-expressions)
+
+It is the difference between greedy and non-greedy quantifiers.
+
+Consider the input 101000000000100.
+
+Using 1.*1, * is greedy - it will match all the way to the end, and then backtrack until it can match 1, leaving you with 1010000000001.
+.*? is non-greedy. * will match nothing, but then will try to match extra characters until it matches 1, eventually matching 101.
+
+All quantifiers have a non-greedy mode: .*?, .+?, .{2,6}?, and even .??.
