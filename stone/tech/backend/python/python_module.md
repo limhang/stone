@@ -15,7 +15,7 @@
 > >[3-3、re正则匹配模块](#s-no3)
 >
 >
->
+> [参考](#info)
 
 
 ## <a name="no1"></a>1、requests
@@ -87,3 +87,10 @@ Using 1.*1, * is greedy - it will match all the way to the end, and then backtra
 .*? is non-greedy. * will match nothing, but then will try to match extra characters until it matches 1, eventually matching 101.
 
 All quantifiers have a non-greedy mode: .*?, .+?, .{2,6}?, and even .??.
+
+
+
+
+
+##<a name="info"></a>参考
+[系统自带库的官方文档](https://docs.python.org/2/library/index.html)
