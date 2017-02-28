@@ -11,6 +11,10 @@
 > >[3-1、datetime模块](#s-no1)
 > >
 > >[3-2、urlparse模块](#s-no2)
+> >
+> >[3-3、re正则匹配模块](#s-no3)
+>
+>
 >
 
 
@@ -67,3 +71,8 @@ eg:
 
 ###<a name="s-no2"></a>3-2、urlparse模块
 网址信息分析截取模块，可[参考](https://my.oschina.net/guol/blog/95699)
+
+###<a name="s-no3"></a>3-3、re正则匹配模块
+正则匹配模块，和perl脚本的正则匹配很像可[参考](http://www.runoob.com/python/python-reg-expressions.html)
+
+正则匹配的[demo](http://www.codeceo.com/article/python-regular-expressions-re-module.html)
