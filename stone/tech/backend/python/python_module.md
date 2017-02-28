@@ -7,7 +7,10 @@
 >
 > [2、lxml](#no2)
 >
->
+> [3、系统自带模块](#system)
+> >[3-1、datetime模块](#s-no1)
+> >
+> >[3-2、urlparse模块](#s-no2)
 >
 
 
@@ -55,3 +58,12 @@ eg:
 [英文资料](http://lxml.de/tutorial.html#the-xml-function)
 
 [中文参考](http://cuiqingcai.com/2621.html)
+
+
+
+##<a name="system"></a>3、系统自带模块
+###<a name="s-no1"></a>3-1、datetime模块
+时间处理相关的模块，可[参考](http://www.wklken.me/posts/2015/03/03/python-base-datetime.html)
+
+###<a name="s-no2"></a>3-2、urlparse模块
+网址信息分析截取模块，可[参考](https://my.oschina.net/guol/blog/95699)
