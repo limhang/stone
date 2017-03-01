@@ -16,6 +16,8 @@
 《用python写网络爬虫》，可在脚本之家下载，使用微信关注，然后百度云下载
 
 ###网络资源
+[豆瓣电影top250爬虫](https://zhuanlan.zhihu.com/p/25228075)
+
 [python学习资料](http://www.imooc.com/article/1451)
 
 [python中文开发社区](http://bbs.pythontab.com/)
