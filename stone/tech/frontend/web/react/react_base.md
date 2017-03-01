@@ -9,7 +9,10 @@
 > 
 > [react-reflux使用](#reflux)
 >
+> [react中props和state的区别](#Q1)
 >
+> [react中父组件和子组件的通信](#Q2)
+> 
 > [参考](#info)
 >
 
@@ -254,6 +257,15 @@ React 为每个状态都提供了两种处理函数，will 函数在进入状态
 [reflux与flux等的比较使用](http://www.cnblogs.com/lovesueee/p/4893218.html)
 
 [官方文档](https://github.com/reflux/refluxjs/tree/master)
+
+
+##<a name="Q1"></a>react中props和state的区别
+[参考文档中文](http://blog.csdn.net/code_for_free/article/details/50762171)
+
+[参考文档英文](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
+
+##<a name="Q2"></a>react中父组件和子组件的通信
+[参考](https://segmentfault.com/a/1190000004044592#articleHeader3)
 
 ##<a name="info"></a>参考
 [infoQ中react组件使用介绍](https://mp.weixin.qq.com/s?__biz=MzIwNjQwMzUwMQ==&mid=2247485008&idx=1&sn=2b3e7e1d5a9ec952e1f85fb173b7354e&chksm=97236492a054ed846610bf4e9a245e97ac87c2d97e36bb138513f5d3e4f35b0dfd0bbebbf0f1&scene=0&key=494a5736f574d32d37c6ce623269fd358186ca2f623ed3a4d43f67a55a772df719f8fc99f331cd2e4e37c992cffc6a490ba02b2bb3dc0a15cee9f558eed3b9896b770edec3503aa254ff98ec55d38edb&ascene=0&uin=MTg3NDkwODQwMw%3D%3D&devicetype=iMac14%2C1+OSX+OSX+10.12+build(16A323)&version=12010210&nettype=WIFI&fontScale=100&pass_ticket=KBczaLXoAGz6WAiUKnS%2FUEZm3pmhicmmR7GLFXyT95ocsQ7gOlGGXlt2aeU2Imwa)
