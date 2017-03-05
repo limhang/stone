@@ -8,7 +8,7 @@ sudo chmod 666 /run/php-fpm/php-fpm.sock 改为：sudo chmod 666 /var/run/php-fp
 
 [参考的资料](https://sg.godaddy.com/zh/help/build-a-lemp-stack-linux-nginx-mysql-php-centos-6-19186)
 
-
+[简书](http://www.jianshu.com/p/447e02d7951d)
 
 
 
