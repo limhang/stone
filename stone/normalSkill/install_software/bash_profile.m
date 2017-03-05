@@ -58,3 +58,8 @@ alias findkey="find . -name "*.md" | xargs grep"
 ##删除stone文件中所有 .DS_Store
 alias rmStDS="find /Users/het/Desktop/jacob/stone/stone -name .DS_Store |xargs rm -rf"
 ##rm------------------------------------
+
+
+##vps_setting
+alias vps="ssh root@138.128.198.147 -p 28943"
+##passwd = 9981aa
