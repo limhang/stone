@@ -7,3 +7,9 @@
 [php编写简单的接口](http://www.jianshu.com/p/02b0af6e4c68)
 
 [thinkphp使用中遇到的点问题](http://www.jianshu.com/p/10cef2d27844)
+
+
+##php mysql链接 与curd操作
+[老套的写法](https://segmentfault.com/a/1190000002734984)
+
+[mysql基本操作](http://blog.csdn.net/cl05300629/article/details/9464007)
