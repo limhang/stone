@@ -11,7 +11,7 @@ ssserver -c /etc/shadowsocks/config.json -d start
 
 ssserver -d stop
 
-ssserver -p 2333 -k xiaozuo -m aes-256-cfb --user nobody -d start
+ssserver -p 8382 -k hehe -m aes-256-cfb --user nobody -d start
 
 
 
