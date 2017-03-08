@@ -12,4 +12,4 @@
 ##2、使用终端代理的方法
 
 
-[参考](http://www.tuicool.com/articles/a2m6fau)
+[git-clone太慢怎么办](http://www.tuicool.com/articles/a2m6fau)
