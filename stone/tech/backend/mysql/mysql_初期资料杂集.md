@@ -16,3 +16,7 @@
 
 [mysql基本操作](http://blog.csdn.net/cl05300629/article/details/9464007)
 
+##书籍推荐
+[php和mysql网站开发]()
+
+主键和外键的区别和联系
