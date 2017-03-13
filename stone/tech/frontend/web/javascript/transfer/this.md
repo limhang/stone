@@ -55,5 +55,5 @@
 上面代码中如果将对象的属性赋值给另一个变量，则该新的函数中的this指向window
 
 
-[参考](http://www.cnblogs.com/wangfupeng1988/p/3988422.html)
+[javascript难点系列参考](http://www.cnblogs.com/wangfupeng1988/p/3988422.html)
 	
