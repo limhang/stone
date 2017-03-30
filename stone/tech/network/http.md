@@ -8,8 +8,13 @@
 >
 > [二、HTTP报文内的信息](#section2)
 >
+> [三、HTTP首部字段](#section3)
 >
->
+> [四、HTTPS协议](#section4)
+> 
+> [五、确认访客的身份认证](#section5)
+> 
+> [六、网站安全](#section6)
 
 ##<a name="section1"></a>一、了解web及网络基础
 
@@ -71,5 +76,87 @@ Cookie:sid=1342077140
 ```
 
 ##<a name="section2"></a>二、HTTP报文内的信息
-###1-1、HTTP报文
+###2-1、HTTP报文
 用于HTTP协议交互的信息
+
+![请求报文和响应报文结构](http://ok2nitkry.bkt.clouddn.com/http03.png)
+
+![请求报文和响应报文实例](http://ok2nitkry.bkt.clouddn.com/http04.png)
+
+请求行：包含用于请求的方法，请求的URI和HTTP版本
+
+状态行：包含表明响应结果的状态码，原因短语和HTTP版本
+
+首部字段：包含表示请求和响应的各种条件和属性的各类首部，一般有4中首部，通用首部，请求首部，响应首部，实体首部。
+
+###2-2、编码提升传输效率
+常用的内容编码有这几种:
+
+* gzip (GNU zip)
+* compress (UNIX 系统的标准压缩)
+* deflate (zlib)
+* identity (不进行编码)
+
+###2-3、分割发送的分块传输编码
+在传输大容量数据的时候，经常采用分块传输的方式
+
+###2-4、发送多种数据的多部分对象集合
+例如在写邮件的时候，可以在邮件中插入音频和视频，还有文字多种不同类型的数据，这个时候就需要用到多种数据的多部分对象集合发送
+
+###2-5、获取指定范围的请求数据
+例如在下载电影的时候，突然断网了，之前是需要重新下载的，但是可以使用Range: bytes=5001-，从5001字节之后开始下载
+
+###2-6、内容协商，返回最合适的内容
+同一个网站，有多份内容相同的页面，比如中文和英文，虽然内容是一样的，但是使用的语言不同，这个时候需用内容协商。Accept，Accept-Charset等等
+
+##<a name="section3"></a>三、HTTP首部字段
+![通用首部字段](http://ok2nitkry.bkt.clouddn.com/http05.jpg)
+
+![请求首部字段](http://ok2nitkry.bkt.clouddn.com/http06.jpg)
+
+![响应首部字段](http://ok2nitkry.bkt.clouddn.com/http07.jpg)
+
+![实体首部字段](http://ok2nitkry.bkt.clouddn.com/http08.jpg)
+
+##<a name="section4"></a>四、HTTPS协议
+##4-1、HTTPS协议介绍
+http协议未对信息进行加密，所以需要采用加密的形式进行传输，常用的加密方法有：ssl,tls，（secure socket layer）(transport layer security)，在http协议上使用ssl就是https协议。
+
+##4-2、不验证通信方的身份可能遇到身份伪装
+http通信不会进行身份的确认，所以可能出现双方身份的伪装，比如客户端使用URI访问服务器的时候，响应的数据一定是指定的服务器发出的数据嘛？服务器发送给客服端，一定是指定的客户端嘛？
+
+比如常见的DoS攻击，就算是无意义的请求，也会响应。
+
+ssl不仅可以加密信息，还有身份验证的作用（证书验证）
+
+##4-3、信息完整性
+收到的信息，可能被人为篡改，http无法证明通信的完整性。像这种，在响应传输的过程中发起的攻击，称为中间人攻击（man in the middle attack,MITM）
+
+常用的http协议为了保证信息完整性，一般采用MD5或者证书签名，但是当签名证书和md5信息被人篡改，则无法保证信息完整性。
+
+##4-4、HTTP+加密+认证+信息完整性=HTTPS
+![https和http的关系](http://ok2nitkry.bkt.clouddn.com/http09.png)
+
+
+##<a name="section5"></a>五、确认访客的身份确认
+http使用的身份认证：
+
+* BASIC认证（基本认证）--服务端放回401说明需要认证，然后输入用户名和密码，使用base64加密，发送给服务端，然后进行身份认证。
+* DIGEST认证（摘要认证）--服务端发送随机数，客户端发送摘要和计算结果。
+* SSL客服端认证
+* FormBase认证（基于表单认证）
+
+由于使用上的便利性和安全性的问题，http协议标准提供的basic认证和digest认证几乎不怎么使用，另外ssl使用成本高，一般使用基于表单认证。
+
+###5-1、基于表单认证
+基于表单的认证标准规范尚未有定论，一般会使用cookie管理session（会话）
+
+![cookie管理session](http://ok2nitkry.bkt.clouddn.com/http10.png)
+
+##<a name="section6"></a>六、网站安全
+###5-1、跨站脚本攻击
+
+
+
+###5-2、SQL脚本注入攻击
+
