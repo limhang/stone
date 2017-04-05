@@ -1,101 +1,96 @@
-# es6
+#es6学习笔记
+缘由：es6的书籍从来还没有系统的看过，这几天系统看看es6吧
 
-引子：学习总结es6的基础知识
-
-**目录**
-
-> [块级作用域，let和const](#let&const) 
+目录：
+> [一、let和const命令](#section1)
+>
+> [二、常量的解构赋值](#section2)
 >
 >
 >
 >
->
-> [参考](#info)
 
-## <a name="let&const"></a>块级作用域，let和const
+##<a name="section1"></a>一、let和const命令
+###1-1、块级作用域
+在es6之前js是没有块级作用域的，es6之后，js引入块级作用域
 
-###块级作用域
-ES5只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。
+使用let申明变量的时候就有隐形的块级作用域，使用const定义常量也有块级作用域
 
-* 场景一，内层变量可能会覆盖外层变量。
+具体的细节我在《你不知道的js》学习笔记中已经写过了
+
+##<a name="section2"></a>二、常量的解构赋值
+###2-1、数组的解构赋值
+本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。下面是一些使用嵌套数组进行解构的例子。
 
 ```
-var tmp = new Date();
+let [foo, [[bar], baz]] = [1, [[2], 3]];
+foo // 1
+bar // 2
+baz // 3
 
-function f() {
-  console.log(tmp);
-  if (false) {
-    var tmp = "hello world";
-  }
+let [ , , third] = ["foo", "bar", "baz"];
+third // "baz"
+
+let [x, , y] = [1, 2, 3];
+x // 1
+y // 3
+
+let [head, ...tail] = [1, 2, 3, 4];
+head // 1
+tail // [2, 3, 4]
+
+let [x, y, ...z] = ['a'];
+x // "a"
+y // undefined
+z // []
+```
+
+###2-2、对象的解构赋值
+对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
+
+```
+let { bar, foo } = { foo: "aaa", bar: "bbb" };
+foo // "aaa"
+bar // "bbb"
+
+let { baz } = { foo: "aaa", bar: "bbb" };
+baz // undefined
+```
+
+###2-3、字符串的解构赋值
+字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。
+
+```
+const [a, b, c, d, e] = 'hello';
+a // "h"
+b // "e"
+c // "l"
+d // "l"
+e // "o"
+```
+
+###2-4、数值和布尔值的解构赋值
+解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。
+
+```
+let {toString: s} = 123;
+s === Number.prototype.toString // true
+
+let {toString: s} = true;
+s === Boolean.prototype.toString // true
+```
+
+###2-5、函数参数的解构赋值
+```
+[[1, 2], [3, 4]].map(([a, b]) => a + b);
+// [ 3, 7 ]
+```
+
+```
+function add([x, y]){
+  return x + y;
 }
-f(); // undefined
 
-值为undefined的原因，可以参考变量提升部分，见下
+add([1, 2]); // 3
 ```
 
-* 场景二，用来计数的循环变量泄露为全局变量。
-
-```
-var s = 'hello';
-
-for (var i = 0; i < s.length; i++) {
-  console.log(s[i]);
-}
-
-console.log(i); // 5
-```
-
-###let与var的区别：
-
-* 1.**不存在变量提升**，var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined。
-
-eg:
-
-```
-// var 的情况
-console.log(foo); // 输出undefined
-var foo = 2;
-
-// let 的情况
-console.log(bar); // 报错ReferenceError
-let bar = 2;
-```
-
-* 2.**不允许重复声明**，let不允许在相同作用域内，重复声明同一个变量。
-
-eg:
-
-```
-// 报错
-function () {
-  let a = 10;
-  var a = 1;
-}
-
-// 报错
-function () {
-  let a = 10;
-  let a = 1;
-}
-```
-
-* 3.let声明的变量，只在let命令所在的**代码块({})内有效**。
-
-eg:
-
-```
-var a = [];
-for (let i = 0; i < 10; i++) {
-  a[i] = function () {
-    console.log(i);
-  };
-}
-a[6](); // 6
-
-如果使用var，那个最后输出为10
-```
-
-
-
-## <a name="info"></a>参考
-[es6入门指南](http://es6.ruanyifeng.com/#docs/let)
